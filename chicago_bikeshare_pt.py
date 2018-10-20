@@ -51,6 +51,7 @@ for data in data_list[0:19]:
 # Mas ainda é difícil pegar uma coluna em uma lista. Exemplo: Lista com todos os gêneros
 
 input("Aperte Enter para continuar...")
+
 # TAREFA 3
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
 
@@ -69,19 +70,27 @@ print("\nTAREFA 3: Imprimindo a lista de gêneros das primeiras 20 amostras")
 print(column_to_list(data_list, -2)[:20])
 
 # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
-assert type(column_to_list(data_list, -2)) is list, "TAREFA 3: Tipo incorreto retornado. Deveria ser uma lista."
-assert len(column_to_list(data_list, -2)) == 1551505, "TAREFA 3: Tamanho incorreto retornado."
+assert type(column_to_list(
+    data_list,
+    -2)) is list, "TAREFA 3: Tipo incorreto retornado. Deveria ser uma lista."
+assert len(column_to_list(
+    data_list, -2)) == 1551505, "TAREFA 3: Tamanho incorreto retornado."
 assert column_to_list(data_list, -2)[0] == "" and column_to_list(data_list, -2)[1] == "Male", \
-  "TAREFA 3: A lista não coincide."
+    "TAREFA 3: A lista não coincide."
 # -----------------------------------------------------
 
 input("Aperte Enter para continuar...")
 # Agora sabemos como acessar as features, vamos contar quantos Male (Masculinos) e Female (Femininos) o dataset tem
 # TAREFA 4
 # TODO: Conte cada gênero. Você não deveria usar uma função para isso.
-male = len(list(filter(lambda gender: gender == 'Male',   column_to_list(data_list, -2))))
-female = len(list(filter(lambda gender: gender == 'Female',   column_to_list(data_list, -2))))
-
+male = len(
+    list(
+        filter(lambda gender: gender == 'Male', column_to_list(data_list,
+                                                               -2))))
+female = len(
+    list(
+        filter(lambda gender: gender == 'Female', column_to_list(
+            data_list, -2))))
 
 # Verificando o resultado
 print("\nTAREFA 4: Imprimindo quantos masculinos e femininos nós encontramos")
@@ -92,6 +101,7 @@ assert male == 935854 and female == 298784, "TAREFA 4: A conta não bate."
 # -----------------------------------------------------
 
 input("Aperte Enter para continuar...")
+
 # Por que nós não criamos uma função para isso?
 # TAREFA 5
 # TODO: Crie uma função para contar os gêneros. Retorne uma lista.
@@ -100,8 +110,14 @@ input("Aperte Enter para continuar...")
 
 
 def count_gender(_data_list):
-    _male = len(list(filter(lambda gender: gender == 'Male', column_to_list(_data_list, -2))))
-    _female = len(list(filter(lambda gender: gender == 'Female', column_to_list(_data_list, -2))))
+    _male = len(
+        list(
+            filter(lambda gender: gender == 'Male',
+                   column_to_list(_data_list, -2))))
+    _female = len(
+        list(
+            filter(lambda gender: gender == 'Female',
+                   column_to_list(_data_list, -2))))
     return [_male, _female]
 
 
@@ -109,13 +125,17 @@ print("\nTAREFA 5: Imprimindo o resultado de count_gender")
 print(count_gender(data_list))
 
 # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
-assert type(count_gender(data_list)) is list, "TAREFA 5: Tipo incorreto retornado. Deveria retornar uma lista."
-assert len(count_gender(data_list)) == 2, "TAREFA 5: Tamanho incorreto retornado."
+assert type(
+    count_gender(data_list)
+) is list, "TAREFA 5: Tipo incorreto retornado. Deveria retornar uma lista."
+assert len(
+    count_gender(data_list)) == 2, "TAREFA 5: Tamanho incorreto retornado."
 assert count_gender(data_list)[0] == 935854 and count_gender(data_list)[1] == 298784, \
-  "TAREFA 5: Resultado incorreto no retorno!"
+    "TAREFA 5: Resultado incorreto no retorno!"
 # -----------------------------------------------------
 
 input("Aperte Enter para continuar...")
+
 # Agora que nós podemos contar os usuários, qual gênero é mais prevalente?
 # TAREFA 6
 # TODO: Crie uma função que pegue o gênero mais popular, e retorne este gênero como uma string.
@@ -138,8 +158,11 @@ print("\nTAREFA 6: Qual é o gênero mais popular na lista?")
 print("O gênero mais popular na lista é: ", most_popular_gender(data_list))
 
 # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
-assert type(most_popular_gender(data_list)) is str, "TAREFA 6: Tipo incorreto no retorno. Deveria retornar uma string."
-assert most_popular_gender(data_list) == "Male", "TAREFA 6: Resultado de retorno incorreto!"
+assert type(
+    most_popular_gender(data_list)
+) is str, "TAREFA 6: Tipo incorreto no retorno. Deveria retornar uma string."
+assert most_popular_gender(
+    data_list) == "Male", "TAREFA 6: Resultado de retorno incorreto!"
 # -----------------------------------------------------
 
 # Se tudo está rodando como esperado, verifique este gráfico!
@@ -162,9 +185,10 @@ print("\nTAREFA 7: Verifique o gráfico!")
 user_types = set(column_to_list(data_list, -3))
 user_types_dict = {}
 for utype in user_types:
-    length = len(list(filter(lambda user: user == utype, column_to_list(data_list, -3))))
+    length = len(
+        list(
+            filter(lambda user: user == utype, column_to_list(data_list, -3))))
     user_types_dict[utype] = length
-
 
 print(user_types_dict)
 
@@ -177,7 +201,6 @@ plt.xlabel('User Type')
 plt.xticks(y_pos, types)
 plt.title('Quantidade por User Type')
 plt.show(block=True)
-
 
 input("Aperte Enter para continuar...")
 # TAREFA 8
@@ -205,11 +228,12 @@ index = (list_len - 1) // 2
 min_trip = sorted_int_list[0]
 max_trip = sorted_int_list[-1]
 mean_trip = sum(sorted_int_list) / len(sorted_int_list)
-median_trip = sorted_int_list[index] if list_len % 2 else (sorted_int_list[index] + sorted_int_list[index + 1]) / 2
-
+median_trip = sorted_int_list[index] if list_len % 2 else (
+    sorted_int_list[index] + sorted_int_list[index + 1]) / 2
 
 print("\nTAREFA 9: Imprimindo o mínimo, máximo, média, e mediana")
-print("Min: ", min_trip, "Max: ", max_trip, "Média: ", mean_trip, "Mediana: ", median_trip)
+print("Min: ", min_trip, "Max: ", max_trip, "Média: ", mean_trip, "Mediana: ",
+      median_trip)
 
 # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
 assert round(min_trip) == 60, "TAREFA 9: min_trip com resultado errado!"
@@ -229,10 +253,12 @@ print(len(start_stations))
 print(start_stations)
 
 # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
-assert len(start_stations) == 582, "TAREFA 10: Comprimento errado de start stations."
+assert len(
+    start_stations) == 582, "TAREFA 10: Comprimento errado de start stations."
 # -----------------------------------------------------
 
 input("Aperte Enter para continuar...")
+
 # TAREFA 11
 # Volte e tenha certeza que você documentou suas funções.
 # Explique os parâmetros de entrada, a saída, e o que a função faz. Exemplo:
@@ -264,7 +290,7 @@ def count_items(_column_list):
     _data_types_dict = {}
     for _utype in _data_types:
         _length = len(list(filter(lambda user: user == _utype, _column_list)))
-        _data_types_dict[_utype] = length
+        _data_types_dict[_utype] = _length
     _item_types = user_types_dict.keys()
     _count_items = user_types_dict.values()
     return _item_types, _count_items
