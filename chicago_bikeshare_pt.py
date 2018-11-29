@@ -3,6 +3,19 @@
 
 import csv
 import matplotlib.pyplot as plt
+import zipfile
+import os.path
+
+csv_name = 'chicago.csv'
+csv_zip_name = 'chicago.csv.zip'
+
+is_csv = os.path.isfile(csv_name)
+is_csv_zip_name = os.path.isfile(csv_zip_name)
+
+if is_csv_zip_name and not is_csv:
+    print("Descompactando CSV file...")
+    with zipfile.ZipFile('./chicago.csv.zip', 'r') as zip_ref:
+        zip_ref.extractall('./')
 
 # Vamos ler os dados como uma lista
 print("Lendo o documento...")
