@@ -37,7 +37,7 @@ This is a project for Udacity Course Nanodegree Full Stack Web Developer.
 
 ## Contributing
 
-We welcome contributions to log-analysis!
+We welcome contributions to this project!
 
 -   ⇄ Pull requests and ★ Stars are always welcome.
 
