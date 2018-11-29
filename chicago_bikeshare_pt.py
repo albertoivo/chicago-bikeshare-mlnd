@@ -40,6 +40,7 @@ data_list = data_list[1:]
 
 input("Aperte Enter para continuar...")
 
+
 # TAREFA 2
 
 
@@ -48,8 +49,6 @@ print("\n")
 for data in data_list[0:19]:
     print(data[6])
 
-# Ótimo! Nós podemos pegar as linhas(samples) iterando com um for, e as colunas(features) por índices.
-# Mas ainda é difícil pegar uma coluna em uma lista. Exemplo: Lista com todos os gêneros
 
 input("Aperte Enter para continuar...")
 
@@ -59,14 +58,13 @@ input("Aperte Enter para continuar...")
 
 def column_to_list(_data, _index):
     _column_list = []
-    # Dica: Você pode usar um for para iterar sobre as amostras, pegar a feature pelo seu índice,
-    # e dar append para uma lista
+
     for d in _data:
         _column_list.append(d[_index])
     return _column_list
 
 
-# Vamos checar com os gêneros se isso está funcionando (apenas para os primeiros 20)
+# Vamos checar com os gêneros se isso está funcionando para os primeiros 20
 print("\nTAREFA 3: Imprimindo a lista de gêneros das primeiras 20 amostras")
 print(column_to_list(data_list, -2)[:20])
 
@@ -76,12 +74,12 @@ assert type(column_to_list(
     -2)) is list, "TAREFA 3: Tipo incorreto retornado. Deveria ser uma lista."
 assert len(column_to_list(
     data_list, -2)) == 1551505, "TAREFA 3: Tamanho incorreto retornado."
-assert column_to_list(data_list, -2)[0] == "" and column_to_list(data_list, -2)[1] == "Male", \
-    "TAREFA 3: A lista não coincide."
+assert column_to_list(data_list, -2)[0] == "" and \
+       column_to_list(data_list, -2)[1] == "Male",\
+       "TAREFA 3: A lista não coincide."
 # -----------------------------------------------------
 
 input("Aperte Enter para continuar...")
-# Agora sabemos como acessar as features, vamos contar quantos Male (Masculinos) e Female (Femininos) o dataset tem
 
 
 # TAREFA 4
@@ -106,14 +104,8 @@ assert male == 935854 and female == 298784, "TAREFA 4: A conta não bate."
 
 input("Aperte Enter para continuar...")
 
-# Por que nós não criamos uma função para isso?
-
 
 # TAREFA 5
-
-
-# Isso deveria retornar uma lista com [count_male, count_female]
-# (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 
 
 def count_gender(_data_list):
@@ -137,16 +129,15 @@ assert type(
 ) is list, "TAREFA 5: Tipo incorreto retornado. Deveria retornar uma lista."
 assert len(
     count_gender(data_list)) == 2, "TAREFA 5: Tamanho incorreto retornado."
-assert count_gender(data_list)[0] == 935854 and count_gender(data_list)[1] == 298784, \
-    "TAREFA 5: Resultado incorreto no retorno!"
+assert count_gender(data_list)[0] == 935854 and \
+       count_gender(data_list)[1] == 298784, \
+       "TAREFA 5: Resultado incorreto no retorno!"
 # -----------------------------------------------------
 
 input("Aperte Enter para continuar...")
 
-# Agora que nós podemos contar os usuários, qual gênero é mais prevalente?
+
 # TAREFA 6
-# TODO: Crie uma função que pegue o gênero mais popular, e retorne este gênero como uma string.
-# Esperamos ver "Male", "Female", ou "Equal" como resposta.
 
 
 def most_popular_gender(_data_list):
@@ -185,10 +176,12 @@ plt.title('Quantidade por Gênero')
 plt.show(block=True)
 
 input("Aperte Enter para continuar...")
+
+
 # TAREFA 7
-# TODO: Crie um gráfico similar para user_types. Tenha certeza que a legenda está correta.
+
+
 print("\nTAREFA 7: Verifique o gráfico!")
-# Pegando toda a coluna de 'user types' e colocando num SET para ficar apenas com valores distintos
 user_types = set(column_to_list(data_list, -3))
 user_types_dict = {}
 for utype in user_types:
@@ -210,22 +203,29 @@ plt.title('Quantidade por User Type')
 plt.show(block=True)
 
 input("Aperte Enter para continuar...")
+
+
 # TAREFA 8
-# TODO: Responda a seguinte questão
+
+
 male, female = count_gender(data_list)
 print("\nTAREFA 8: Por que a condição a seguir é Falsa?")
 print("male + female == len(data_list):", male + female == len(data_list))
-answer = "Porque há vários registros em branco. Então a soma correta seria: male + female + branco. "
+answer = "Porque há vários registros em branco. " \
+         "Então a soma correta seria: male + female + branco. "
 print("resposta:", answer)
 
 # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
-assert answer != "Escreva sua resposta aqui.", "TAREFA 8: Escreva sua própria resposta!"
+assert answer != "Escreva sua resposta aqui.", \
+    "TAREFA 8: Escreva sua própria resposta!"
 # -----------------------------------------------------
 
 input("Aperte Enter para continuar...")
-# Vamos trabalhar com trip_duration (duração da viagem) agora. Não conseguimos tirar alguns valores dele.
+
+
 # TAREFA 9
-# TODO: Ache a duração de viagem Mínima, Máxima, Média, e Mediana.
+
+
 # Você não deve usar funções prontas para isso, como max() e min().
 trip_duration_list = column_to_list(data_list, 2)
 sorted_int_list = sorted(list(map(int, trip_duration_list)))
@@ -251,9 +251,10 @@ assert round(median_trip) == 670, "TAREFA 9: median_trip com resultado errado!"
 
 input("Aperte Enter para continuar...")
 
+
 # TAREFA 10
 
-# Gênero é fácil porque nós temos apenas algumas opções. E quanto a start_stations? Quantas opções ele tem?
+
 start_stations = set(column_to_list(data_list, 3))
 
 print("\nTAREFA 10: Imprimindo as start stations:")
@@ -271,10 +272,6 @@ input("Aperte Enter para continuar...")
 # TAREFA 11
 
 
-# Volte e tenha certeza que você documentou suas funções.
-# Explique os parâmetros de entrada, a saída, e o que a função faz. Exemplo:
-
-
 def new_function(param1: int, param2: str) -> list:
     """
     Função de exemplo com anotações.
@@ -289,6 +286,7 @@ def new_function(param1: int, param2: str) -> list:
 
 
 input("Aperte Enter para continuar...")
+
 
 # TAREFA 12
 
