@@ -1,6 +1,6 @@
+#!/usr/bin/env python3
 # coding: utf-8
 
-# Começando com os imports
 import csv
 import matplotlib.pyplot as plt
 
@@ -25,8 +25,8 @@ print("Linha 1: ")
 print(data_list[1])
 
 input("Aperte Enter para continuar...")
+
 # TAREFA 1
-# TODO: Imprima as primeiras 20 linhas usando um loop para identificar os dados.
 print("\n\nTAREFA 1: Imprimindo as primeiras 20 amostras")
 print("\n")
 for data in data_list[1:20]:
@@ -39,8 +39,9 @@ data_list = data_list[1:]
 # Por exemplo: sample[6] para imprimir gênero, ou sample[-2]
 
 input("Aperte Enter para continuar...")
+
 # TAREFA 2
-# TODO: Imprima o `gênero` das primeiras 20 linhas
+
 
 print("\nTAREFA 2: Imprimindo o gênero das primeiras 20 amostras")
 print("\n")
@@ -52,8 +53,8 @@ for data in data_list[0:19]:
 
 input("Aperte Enter para continuar...")
 
+
 # TAREFA 3
-# TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
 
 
 def column_to_list(_data, _index):
@@ -81,8 +82,11 @@ assert column_to_list(data_list, -2)[0] == "" and column_to_list(data_list, -2)[
 
 input("Aperte Enter para continuar...")
 # Agora sabemos como acessar as features, vamos contar quantos Male (Masculinos) e Female (Femininos) o dataset tem
+
+
 # TAREFA 4
-# TODO: Conte cada gênero. Você não deveria usar uma função para isso.
+
+
 male = len(
     list(
         filter(lambda gender: gender == 'Male', column_to_list(data_list,
@@ -103,8 +107,11 @@ assert male == 935854 and female == 298784, "TAREFA 4: A conta não bate."
 input("Aperte Enter para continuar...")
 
 # Por que nós não criamos uma função para isso?
+
+
 # TAREFA 5
-# TODO: Crie uma função para contar os gêneros. Retorne uma lista.
+
+
 # Isso deveria retornar uma lista com [count_male, count_female]
 # (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 
@@ -243,9 +250,10 @@ assert round(median_trip) == 670, "TAREFA 9: median_trip com resultado errado!"
 # -----------------------------------------------------
 
 input("Aperte Enter para continuar...")
+
 # TAREFA 10
+
 # Gênero é fácil porque nós temos apenas algumas opções. E quanto a start_stations? Quantas opções ele tem?
-# TODO: Verifique quantos tipos de start_stations nós temos, usando set()
 start_stations = set(column_to_list(data_list, 3))
 
 print("\nTAREFA 10: Imprimindo as start stations:")
@@ -259,7 +267,10 @@ assert len(
 
 input("Aperte Enter para continuar...")
 
+
 # TAREFA 11
+
+
 # Volte e tenha certeza que você documentou suas funções.
 # Explique os parâmetros de entrada, a saída, e o que a função faz. Exemplo:
 
@@ -278,8 +289,10 @@ def new_function(param1: int, param2: str) -> list:
 
 
 input("Aperte Enter para continuar...")
-# TAREFA 12 - Desafio! (Opcional)
-# TODO: Crie uma função para contar tipos de usuários, sem definir os tipos
+
+# TAREFA 12
+
+
 # para que nós possamos usar essa função com outra categoria de dados.
 print("Você vai encarar o desafio? (yes ou no)")
 answer = "yes"
