@@ -24,12 +24,10 @@ This is a project for Udacity Course Nanodegree Full Stack Web Developer.
 
 ## Quick start
 
-1. Fork it
-2. Clone it
-3. `cd chicago-bikeshare-mlnd`
-4. Unzip the file `chicago.csv.zip` in the same directory
-5. `pip install -r requirements.txt`
-6. `python3 chicago_bikeshare_pt.py`
+1. Clone it with `git clone https://github.com/albertoivo/chicago-bikeshare-mlnd.git`
+1. `cd chicago-bikeshare-mlnd`
+1. `pip install -r requirements.txt`
+1. `python3 chicago_bikeshare_pt.py`
 
 ## Developed with
 
