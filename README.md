@@ -6,7 +6,7 @@
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 
-This is a project for Udacity Course Nanodegree Full Stack Web Developer.
+This is a project for Udacity Course Nanodegree Introduction to Machine Learning.
 
 ## Table of contents
 
@@ -45,7 +45,7 @@ We welcome contributions to this project!
 
 ## Author
 
-* **Alberto Ivo Vieira** - [Github](https://github.com/albertoivo) | [LinkedIn](https://www.linkedin.com/in/alberto-ivo-vieira/)
+* **Alberto Ivo Vieira** - [Blog](https://albertoivo.github.io) | [GitHub](https://github.com/albertoivo) | [LinkedIn](https://www.linkedin.com/in/alberto-ivo-vieira/)
 
 ## License
 
