@@ -19,7 +19,12 @@ This is a project for Udacity Course Nanodegree Full Stack Web Developer.
 
 ## Prerequisites
 
-1.  [Python 3](https://www.python.org)
+- [Python 3](https://www.python.org)
+- [Matplotlib](https://matplotlib.org/)
+- [CSV](https://docs.python.org/3/library/csv.html)
+- [Zipfile](https://docs.python.org/3/library/zipfile.html)
+
+PS: All these dependencies (and more) are on `requirements.txt` file.
 
 ## Quick start
 
@@ -40,7 +45,7 @@ We welcome contributions to this project!
 
 ## Author
 
-* **Alberto Ivo Vieira** - [Github](https://github.com/albertoivo)
+* **Alberto Ivo Vieira** - [Github](https://github.com/albertoivo) | [LinkedIn](https://www.linkedin.com/in/alberto-ivo-vieira/)
 
 ## License
 
